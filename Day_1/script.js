@@ -9,11 +9,13 @@ let ul = document.createElement('ul'); //Creating ul variable containing the tag
 let finalResultContainer = document.getElementById('finalResultContainer'); //Getting the final result container
 let result = document.createElement('p');
 
-//fetching response data from puzzleinput.txt (this has a lot of metadata from the response)
+//Fetching response data from puzzleinput.txt (this has a lot of metadata from the response)
+//The response is an asynchronous promise
 fetch('puzzleinput.txt')
 
-    // The promise is resolved with the .then...
-    //...trimmed out of the metadata to keep the text only
+    //The fetch promise will be resolved in the following .then...
+    //...by being stored in the "response" parameter below
+    //In which it will be trimmed out of its metadata to keep the text only
     //response.text() returns another promise
     .then(response => response.text())
 
